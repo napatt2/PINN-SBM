@@ -1,6 +1,8 @@
 # Physics-Informed Neural Networks for Physics of Earthquakes
 Rassi et al. [1] introduced a method called Physics-informed Neural Networks (PINNs) for solving forward and inverse partial differential equations. Through automatic differentiation, PINNs enable the imposition of physical laws into the objective function.
 
+![alt text](https://uofi.box.com/s/tkapfhy539i9gny2yg6ud0jtfj606lqs)
+
 We investigate emergent dynamics at earthquake fault motion using slip law formulation of nonlinear rate-and-state friction law attached to Burridge-Knopoff spring-block model. This simple system serves as a foundation to understand and predict the dynamic behavior of physical systems. We proposed approaches for both forward and inverse problems. Our primary objectives are:
 
 1. to predict slip evolution of a single spring-block model coupling with rate-and-state friction law using forward PINN 
