@@ -6,7 +6,11 @@ We investigate emergent dynamics at earthquake fault motion using slip law formu
 (3) to estimate evolution of friction force through time-dependent inverse PINN 
 (4) to estimate the material properties of fault determining the instability of the fault.
 # Installation
+### TensorFlow 
 
+```javascript
+pip install numpy==1.19.2 scipy==1.5.3 tensorflow==2.0.0 matplotlib==3.3.2 pydoe==0.3.8 seaborn==0.9.0
+```
 # Bibliography
 [1] Maziar Raissi, Paris Perdikaris, and George Em Karniadakis. Physics Informed Deep Learning (Part I): Data-driven Solutions of Nonlinear Partial Differential Equations. http://arxiv.org/pdf/1711.10561v1
 [3] Lu Lu et al. DeepXDE: A deep learning library for solving differential equations.2019. https://arxiv.org/abs/1907.04502
