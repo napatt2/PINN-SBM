@@ -9,8 +9,27 @@ We investigate emergent dynamics at earthquake fault motion using slip law formu
 2. to estimate a constant frictional parameter via time-independent inverse PINN 
 3. to estimate evolution of friction force through time-dependent inverse PINN 
 4. to estimate the material properties of fault determining the instability of the fault.
+# Installation
+All required packages are listed as follows:
+```
+matplotlib
+numpy
+scikit-learn
+scikit-optimize>=0.9.0
+scipy
+pandas
+deepxde
+```
+This repository requires the installation of [DeepXDE](https://deepxde.readthedocs.io/en/latest/) [2]. Each problem's code is standalone and can be run individually using Jupyter Notebook.
+
+# Usage
+- [Forward_adaptive_loss.ipynb](PINN_SBM/Forward_adaptive_loss.ipynb) predicts the slip evolution of a single block using an adaptive time-stepping scheme based on loss. The time step is chosen such that the loss falls below a predefined threshold. This model does not involve any observations.
+- [Forward_adaptive_mse.ipynb](PINN_SBM/Forward_adaptive_mse.ipynb) predicts the slip evolution of a single block through an adaptive time-stepping approach relying on the mean squared error (MSE) of predictions. Like the previous model, it does not incorporate any observations.
+- [Forward_with_data.ipynb](PINN_SBM/Forward_with_data.ipynb) predicts the slip evolution of a single block and incorporates observations, which are available [here](Dataset/sbm1.csv).
+- [Inverse_friction_evolution.ipynb](PINN_SBM/Inverse_friction_evolution.ipynb)  estimates the evolution of friction force based on the dataset of slip and slip rate, available [here](Dataset/sbm_inv.csv).
+- [Inverse_kappa.ipynb](PINN_SBM/Inverse_kappa.ipynb) estimates a constant frictional parameter $\kappa$, given the observations of slip, slip rate, and state variable. The dataset can be found [here](Dataset/sbm1.csv).
+- [Inverse_10_blocks.ipynb](PINN_SBM/Inverse_10_blocks.ipynb) estimates the material properties $\epsilon$ of each block in a series of 10 blocks, which determine the stability of the fault to earthquakes. We utilize the observations, available [here](Dataset/sbm10.csv).
 
 # Bibliography
 [1] Maziar Raissi, Paris Perdikaris, and George Em Karniadakis. Physics Informed Deep Learning (Part I): Data-driven Solutions of Nonlinear Partial Differential Equations. http://arxiv.org/pdf/1711.10561v1
-
 [2] Lu Lu et al. DeepXDE: A deep learning library for solving differential equations.2019. https://arxiv.org/abs/1907.04502
