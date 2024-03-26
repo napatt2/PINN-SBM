@@ -9,6 +9,13 @@ We investigate emergent dynamics at earthquake fault motion using slip law formu
 2. to estimate a constant frictional parameter via time-independent inverse PINN 
 3. to estimate evolution of friction force through time-dependent inverse PINN 
 4. to estimate the material properties of fault determining the instability of the fault.
+
+We also investigate the forward and inverse problems of the acoustic and vector wave equations in 2D. The primary goals are as follows:
+1. to predict the solution of the acoustic wave equation in 2D space
+2. to estimate the wave speed of the acoustic 2D wave equation, given the solution of the wave equation
+3. to predict the solution of the vector wave equation
+4. to estimate the material properties in the vector wave equation, given the measurements of displacement
+
 # Installation
 All required packages are listed as follows:
 ```
@@ -29,8 +36,14 @@ This repository requires the installation of [DeepXDE](https://deepxde.readthedo
 - [Inverse_friction_evolution.ipynb](https://github.com/napatt2/PINN-SBM/blob/af88cf450e15d185849296593c39f3a9152d321a/PINN_SBM/Inverse_friction_evolution.ipynb)  estimates the evolution of friction force based on the dataset of slip and slip rate, available [here](https://github.com/napatt2/PINN-SBM/blob/af88cf450e15d185849296593c39f3a9152d321a/Dataset/sbm_inv.csv).
 - [Inverse_kappa.ipynb](https://github.com/napatt2/PINN-SBM/blob/af88cf450e15d185849296593c39f3a9152d321a/PINN_SBM/Inverse_kappa.ipynb) estimates a constant frictional parameter $\kappa$, given the observations of slip, slip rate, and state variable. The dataset can be found [here](https://github.com/napatt2/PINN-SBM/blob/af88cf450e15d185849296593c39f3a9152d321a/Dataset/sbm1.csv).
 - [Inverse_10_blocks.ipynb](https://github.com/napatt2/PINN-SBM/blob/af88cf450e15d185849296593c39f3a9152d321a/PINN_SBM/Inverse_10_blocks.ipynb) estimates the material properties $\epsilon$ of each block in a series of 10 blocks, which determine the stability of the fault to earthquakes. We utilize the observations, available [here](https://github.com/napatt2/PINN-SBM/blob/af88cf450e15d185849296593c39f3a9152d321a/Dataset/sbm10.csv).
+- [Forward_acoustic_wave.ipynb](https://github.com/napatt2/PINN-SBM/blob/main/Wave%20Equation/Forward_acoustic_wave.ipynb) predicts the solution of acoustic wave equation in 2D.
+- [Forward_vector_wave.ipynb](https://github.com/napatt2/PINN-SBM/blob/main/Wave%20Equation/Forward_vector_wave.ipynb) predicts the solution of vector wave equation in 2D.
+- [Inverse_acoustic_wave.ipynb](https://github.com/napatt2/PINN-SBM/blob/main/Wave%20Equation/Inverse_acoustic_wave.ipynb) identifies the wave speed of acoustic wave equation using the dataset of displacement [here](https://github.com/napatt2/PINN-SBM/blob/main/Dataset/acoustic_c3.mat).
+- [Inverse_vector_wave.ipynb](https://github.com/napatt2/PINN-SBM/blob/main/Wave%20Equation/Inverse_vector_wave.ipynb) estimates material properties, given the dataset of solution [here](https://github.com/napatt2/PINN-SBM/blob/main/Wave%20Equation/Inverse_vector_wave.ipynb).
 
 # Bibliography
 [1] Maziar Raissi, Paris Perdikaris, and George Em Karniadakis. Physics Informed Deep Learning (Part I): Data-driven Solutions of Nonlinear Partial Differential Equations. http://arxiv.org/pdf/1711.10561v1
 
 [2] Lu Lu et al. DeepXDE: A deep learning library for solving differential equations.2019. https://arxiv.org/abs/1907.04502
+
+[3] Wang, Sifan, Hanwen Wang, and Paris Perdikaris. On the eigenvector bias of Fourier feature networks: From regression to solving multi-scale PDEs with physics-informed neural networks. https://doi.org/10.1016/j.cma.2021.113938
