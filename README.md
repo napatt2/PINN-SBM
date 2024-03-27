@@ -1,4 +1,4 @@
-# Physics-Informed Neural Networks for Physics of Earthquakes
+# QuakeNN
 Rassi et al. [1] introduced a method called Physics-informed Neural Networks (PINNs) for solving forward and inverse partial differential equations. Through automatic differentiation, PINNs enable the imposition of physical laws into the objective function.
 
 ![BK](https://github.com/napatt2/PINN-SBM/assets/106395611/79fa0712-9a47-44e4-a56b-39e2e2b38ea8)
@@ -29,7 +29,8 @@ deepxde
 ```
 This repository requires the installation of [DeepXDE](https://deepxde.readthedocs.io/en/latest/) [2]. Each problem's code is standalone and can be run individually using Jupyter Notebook. The line ```!pip install deepxde``` in the code is intended for Google Colab, users shall comment it out if using other platforms.
 
-# Usage
+# Running QuakeNN
+The user can execute the entire code from start to finish. It encompasses all aspects, including data preprocessing, model training, and making predictions, all within a single code. Here are the description of each code:
 - [Forward_adaptive_loss.ipynb](https://github.com/napatt2/PINN-SBM/blob/af88cf450e15d185849296593c39f3a9152d321a/PINN_SBM/Forward_adaptive_loss.ipynb) predicts the slip evolution of a single block using an adaptive time-stepping scheme based on loss. The time step is chosen such that the loss falls below a predefined threshold. This model does not involve any observations.
 - [Forward_adaptive_mse.ipynb](https://github.com/napatt2/PINN-SBM/blob/af88cf450e15d185849296593c39f3a9152d321a/PINN_SBM/Forward_adaptive_mse.ipynb) predicts the slip evolution of a single block through an adaptive time-stepping approach relying on the mean squared error (MSE) of predictions. Like the previous model, it does not incorporate any observations.
 - [Forward_with_data.ipynb](https://github.com/napatt2/PINN-SBM/blob/af88cf450e15d185849296593c39f3a9152d321a/PINN_SBM/Forward_with_data.ipynb) predicts the slip evolution of a single block and incorporates observations, which are available [here](https://github.com/napatt2/PINN-SBM/blob/af88cf450e15d185849296593c39f3a9152d321a/Dataset/sbm1.csv).
@@ -40,8 +41,9 @@ This repository requires the installation of [DeepXDE](https://deepxde.readthedo
 - [Forward_vector_wave.ipynb](https://github.com/napatt2/PINN-SBM/blob/main/Wave%20Equation/Forward_vector_wave.ipynb) predicts the solution of vector wave equation in 2D.
 - [Inverse_acoustic_wave.ipynb](https://github.com/napatt2/PINN-SBM/blob/main/Wave%20Equation/Inverse_acoustic_wave.ipynb) identifies the wave speed of acoustic wave equation using the dataset of displacement [here](https://github.com/napatt2/PINN-SBM/blob/main/Dataset/acoustic_c3.mat).
 - [Inverse_vector_wave.ipynb](https://github.com/napatt2/PINN-SBM/blob/main/Wave%20Equation/Inverse_vector_wave.ipynb) estimates material properties, given the dataset of solution [here](https://github.com/napatt2/PINN-SBM/blob/main/Wave%20Equation/Inverse_vector_wave.ipynb).
+# Results and Output
 
-# Bibliography
+# References
 [1] Maziar Raissi, Paris Perdikaris, and George Em Karniadakis. Physics Informed Deep Learning (Part I): Data-driven Solutions of Nonlinear Partial Differential Equations. http://arxiv.org/pdf/1711.10561v1
 
 [2] Lu Lu et al. DeepXDE: A deep learning library for solving differential equations.2019. https://arxiv.org/abs/1907.04502
