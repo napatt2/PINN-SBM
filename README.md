@@ -16,8 +16,8 @@ We also investigate the forward and inverse problems of the acoustic and vector 
 3. to predict the solution of the vector wave equation
 4. to estimate the material properties in the vector wave equation, given the measurements of displacement
 
-# Installation
-All required packages are listed as follows:
+# Getting Started
+This software tool uses Python language. All required packages are listed as follows:
 ```
 matplotlib
 numpy
@@ -27,7 +27,7 @@ scipy
 pandas
 deepxde
 ```
-This repository requires the installation of [DeepXDE](https://deepxde.readthedocs.io/en/latest/) [2]. Each problem's code is standalone and can be run individually using Jupyter Notebook.
+This repository requires the installation of [DeepXDE](https://deepxde.readthedocs.io/en/latest/) [2]. Each problem's code is standalone and can be run individually using Jupyter Notebook. The line ```!pip install deepxde``` in the code is intended for Google Colab, users shall comment it out if using other platforms.
 
 # Usage
 - [Forward_adaptive_loss.ipynb](https://github.com/napatt2/PINN-SBM/blob/af88cf450e15d185849296593c39f3a9152d321a/PINN_SBM/Forward_adaptive_loss.ipynb) predicts the slip evolution of a single block using an adaptive time-stepping scheme based on loss. The time step is chosen such that the loss falls below a predefined threshold. This model does not involve any observations.
